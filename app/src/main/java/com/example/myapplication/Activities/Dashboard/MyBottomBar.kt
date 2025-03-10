@@ -48,6 +48,7 @@ fun MyBottomBar() {
                 onClick = {
                     selectedItem = bottomMenuItem.label
                     if (bottomMenuItem.label == "bell") {
+
                     } else {
                         Toast.makeText(context, bottomMenuItem.label, Toast.LENGTH_SHORT).show()
                     }

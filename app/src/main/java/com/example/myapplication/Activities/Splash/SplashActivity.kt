@@ -11,13 +11,15 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.example.myapplication.MainActivity
+import com.example.myapplication.Activities.Dashboard.DashboardActivity
 import com.example.myapplication.R
-
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @SuppressLint("CustomSplashScreen")
@@ -27,7 +29,7 @@ class SplashActivity : AppCompatActivity() {
 enableEdgeToEdge()
         setContent {
             SplashScreen(onGetStartedClick = {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, DashboardActivity::class.java))
             })
         }
     }
@@ -36,6 +38,7 @@ enableEdgeToEdge()
 @Composable
 @Preview
 fun SplashScreen(onGetStartedClick: () -> Unit = {}) {
+    StatusTopBarColor()
     Column(modifier = Modifier.fillMaxSize()) {
         ConstraintLayout {
             val (backgroundImg, startbtn) = createRefs()
@@ -59,5 +62,16 @@ fun SplashScreen(onGetStartedClick: () -> Unit = {}) {
                 GradientButton(onClick = onGetStartedClick, text = "Get Started", padding = 32)
             }
         }
+    }
+}
+
+@Composable
+fun StatusTopBarColor(){
+    val  systemUiController = rememberSystemUiController()
+    SideEffect {
+        systemUiController.setStatusBarColor(
+            color= Color.Transparent,
+            darkIcons = false
+        )
     }
 }

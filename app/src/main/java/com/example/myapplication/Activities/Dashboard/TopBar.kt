@@ -1,7 +1,9 @@
 package com.example.myapplication.Activities.Dashboard
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
@@ -21,9 +23,11 @@ import com.example.myapplication.R
 @Composable
 @Preview
 fun Topbar(){
+
+    Spacer(modifier = Modifier.height(40.dp))
     ConstraintLayout (
         modifier = Modifier
-            .padding(horizontal = 80.dp)
+            .padding(horizontal = 115.dp)
             .fillMaxWidth()
             .wrapContentHeight()
     ){
@@ -45,7 +49,7 @@ fun Topbar(){
             text = "Поиск",
             color = Color.Black,
             fontWeight = FontWeight.Bold,
-            fontSize = 60.sp,
+            fontSize = 40.sp,
             modifier = Modifier.constrainAs (find){
                 top.linkTo(parent.top)
                 bottom.linkTo(parent.bottom)
