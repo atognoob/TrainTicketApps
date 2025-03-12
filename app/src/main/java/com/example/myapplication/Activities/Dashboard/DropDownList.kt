@@ -3,6 +3,7 @@ package com.example.myapplication.Activities.Dashboard
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -73,11 +74,16 @@ fun DropDownList(
                 modifier = Modifier
                     .padding(top=8.dp)
                     .fillMaxWidth()
+                    .background(
+                        colorResource(R.color.lightblue),
+                        shape = RoundedCornerShape(10.dp)
+                    )
+                    .clip(RoundedCornerShape(10.dp))
                     .menuAnchor(
                         type = MenuAnchorType.PrimaryNotEditable, // Loại menu anchor
                         enabled = true // Cho phép menu anchor
-                    )
-                    .clip(RoundedCornerShape(10.dp)),
+                    ),
+
                 placeholder = {
                     Text(
                         text = hint,
@@ -93,7 +99,7 @@ fun DropDownList(
                 textStyle = TextStyle(
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp
-                ),
+                )
 
             )
             DropdownMenu(
@@ -101,7 +107,7 @@ fun DropDownList(
                 onDismissRequest = {expanded=false}
             ) {
                 items.forEach { item->
-                    @Composable {
+
                     DropdownMenuItem(
                         text = {
                             Row(
@@ -121,7 +127,7 @@ fun DropDownList(
                             onItemSelected(item)
                         }
                     )
-                }
+
                 }
             }
         }
