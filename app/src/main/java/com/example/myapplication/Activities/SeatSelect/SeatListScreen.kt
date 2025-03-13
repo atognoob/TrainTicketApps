@@ -3,6 +3,7 @@ package com.example.myapplication.Activities.SeatSelect
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 
@@ -65,11 +66,11 @@ fun SeatListScreen(
     }
     ConstraintLayout(
         modifier = Modifier
-
-            .background(color = colorResource(R.color.blue))
+            .fillMaxSize()
+            .background(color = colorResource(R.color.white))
 
     ){
-        val(topSection,middleSection, bottomSection) = createRefs()
+        val(topSection,middleSection) = createRefs()
 
         TopSection(
             modifier = Modifier
@@ -90,12 +91,12 @@ fun SeatListScreen(
                     end.linkTo(parent.end)
                 }
         ) {
-            val (map, seatGrid) =  createRefs()
+            val (map, seatGrid,bottomSection) =  createRefs()
             Image(
                 painter = painterResource(R.drawable.airple_seat),
                 contentDescription = null,
                 modifier = Modifier
-
+                    .fillMaxSize()
                     .constrainAs(map) {
                         top.linkTo(parent.top)
                         start.linkTo(parent.start)
@@ -137,28 +138,29 @@ fun SeatListScreen(
                     )
                 }
             }
+            BottomSection(
+                seatCount=seatCount,
+                selectedSeats = selectedSeatNames.joinToString(","),
+                totalPrice = totalPrice,
+                onConfirmClick = {
+                    if (seatCount>0){
+                        train.Passenger=selectedSeatNames.joinToString(",")
+                        train.Price = totalPrice
+                        onConfirm(train)
+                    }else{
+                        Toast.makeText(context, "Please select your seat", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                modifier = Modifier
+                    .constrainAs(bottomSection){
+                        top.linkTo(seatGrid.bottom)
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                    }
+            )
 
         }
-        BottomSection(
-            seatCount=seatCount,
-            selectedSeats = selectedSeatNames.joinToString(","),
-            totalPrice = totalPrice,
-            onConfirmClick = {
-                if (seatCount>0){
-                    train.Passenger=selectedSeatNames.joinToString(",")
-                    train.Price = totalPrice
-                    onConfirm(train)
-                }else{
-                    Toast.makeText(context, "Please select your seat", Toast.LENGTH_SHORT).show()
-                }
-            },
-            modifier = Modifier
-                .constrainAs(bottomSection){
-                    bottom.linkTo(parent.bottom)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                }
-        )
+
     }
 }
 
