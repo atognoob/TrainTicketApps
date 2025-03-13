@@ -56,7 +56,7 @@ fun TicketDetailScreen(
                 })
             }
 
-            GradientButton(onClick = {}, text = "Download Ticket", padding = 32)
+            GradientButton(onClick = {}, text = "Скачать билет", padding = 32)
         }
     }
 }

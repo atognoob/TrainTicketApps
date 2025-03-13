@@ -41,7 +41,7 @@ fun TicketDetailHeader(
                 .size(50.dp)
         )
         Text(
-            text = "Choose Seats",
+            text = "Билет",
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
             fontSize = 30.sp,

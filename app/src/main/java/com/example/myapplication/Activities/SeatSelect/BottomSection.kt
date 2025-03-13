@@ -40,9 +40,9 @@ fun BottomSection(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Absolute.SpaceEvenly
         ){
-            LegendItem(text = "Available",color = colorResource(R.color.green))
-            LegendItem(text = "Selected",color = colorResource(R.color.orange))
-            LegendItem(text = "Unavailable",color = colorResource(R.color.gray))
+            LegendItem(text = "Пустой",color = colorResource(R.color.green))
+            LegendItem(text = "Выбранное место",color = colorResource(R.color.orange))
+            LegendItem(text = "Продал",color = colorResource(R.color.gray))
         }
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -55,7 +55,7 @@ fun BottomSection(
         ){
             Column {
                 Text(
-                    text = "$seatCount Seat Selected",
+                    text = "$seatCount место выбрано",
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 14.sp,
@@ -74,6 +74,6 @@ fun BottomSection(
                 fontSize = 25.sp,
             )
         }
-        GradientButton(onClick = onConfirmClick,"Confirm Seats")
+        GradientButton(onClick = onConfirmClick,"Продожить")
     }
 }

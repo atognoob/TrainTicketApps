@@ -91,12 +91,12 @@ fun MainScreen(){
                     .padding(vertical = 16.dp, horizontal = 24.dp)
                 ) {
                     //from
-                    WhiteTitle("From")
+                    WhiteTitle("Откуда")
                     val locationNames: List<String> = locations.map{it.Name}
                     DropDownList(
                         items = locationNames,
                         loadingIcon = painterResource(R.drawable.from_inc),
-                        hint = "Selected original",
+                        hint = "Выбранный оригинал",
                         showLocationLoading=showLocationLoading
                     ) { selectedItem ->
                         from = selectedItem
@@ -104,11 +104,11 @@ fun MainScreen(){
 
                     Spacer(modifier = Modifier.height(16.dp))
                     //to
-                    WhiteTitle("To")
+                    WhiteTitle("Куда")
                     DropDownList(
                         items = locationNames,
                         loadingIcon = painterResource(R.drawable.from_inc),
-                        hint = "Selected Destination",
+                        hint = "Выбранный оригинал",
                         showLocationLoading=showLocationLoading
                     ) { selectedItem ->
                         to = selectedItem
@@ -116,17 +116,17 @@ fun MainScreen(){
 
                     //calendar
                     Spacer(modifier = Modifier.height(16.dp))
-                    WhiteTitle("Depature date")
+                    WhiteTitle("Когда")
                     DatePickerScreen1(Modifier.weight(1f))
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    WhiteTitle("Return date")
+                    WhiteTitle("Обратно")
                     DatePickerScreen2(Modifier.weight(1f))
 
                     //passenger count
                     Spacer(modifier = Modifier.height(16.dp))
-                    WhiteTitle("Passengers")
+                    WhiteTitle("Кто едет")
                     Row ( modifier = Modifier.fillMaxWidth()){
                         PassengerCounter(
                             title = "пассажир",
@@ -147,7 +147,7 @@ fun MainScreen(){
                             }
                             context.startActivity(intent)
                         },
-                        text = "Search"
+                        text = "Найти поезда"
                     )
                 }
             }

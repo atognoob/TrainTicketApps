@@ -59,7 +59,7 @@ fun SplashScreen(onGetStartedClick: () -> Unit = {}) {
             Box(modifier = Modifier.constrainAs(startbtn) {
                 bottom.linkTo(parent.bottom)
             }) {
-                GradientButton(onClick = onGetStartedClick, text = "Get Started", padding = 32)
+                GradientButton(onClick = onGetStartedClick, text = "Начать", padding = 32)
             }
         }
     }

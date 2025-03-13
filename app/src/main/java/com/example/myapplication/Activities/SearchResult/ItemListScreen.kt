@@ -66,7 +66,7 @@ fun ItemListScreen(
                 .size(50.dp)
         )
         Text(
-            text = "Search Result",
+            text = "Выбрать поездку",
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
             fontSize = 30.sp,
