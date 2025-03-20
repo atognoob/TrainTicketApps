@@ -24,5 +24,4 @@ https://github.com/atognoob/TrainTicketApps/tree/main/app/src/main/java/com/exam
 Firebase
 https://github.com/atognoob/TrainTicketApps/tree/main/app/src/main/java/com/example/myapplication/Repository
 
-Запись экрана
-https://github.com/atognoob/TrainTicketApps/blob/main/Screen_Recording.mp4
+
