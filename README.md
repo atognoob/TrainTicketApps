@@ -21,7 +21,7 @@ https://github.com/atognoob/TrainTicketApps/tree/main/app/src/main/java/com/exam
 ViewModel для Экран поиск и Экран выбрать поездку
 https://github.com/atognoob/TrainTicketApps/tree/main/app/src/main/java/com/example/myapplication/Domain
 
-Firebase
+Firebase и API
 https://github.com/atognoob/TrainTicketApps/tree/main/app/src/main/java/com/example/myapplication/Repository
 
 
